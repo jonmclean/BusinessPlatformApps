@@ -26,6 +26,9 @@ namespace Microsoft.Deployment.Actions.AzureCustom.AzureAS
             string admin = request.DataStore.GetValue("ASAdmin") ?? 
                 AzureUtility.GetEmailFromToken(request.DataStore.GetJson("AzureToken"));
 
+            request.DataStore.AddToDataStore("ASAdmin", admin, DataStoreType.Public);
+            request.DataStore.AddToDataStore("ASServerName", serverName, DataStoreType.Public);
+
             SubscriptionCloudCredentials creds = new TokenCloudCredentials(subscription, azureToken);
             AzureArmParameterGenerator param = new AzureArmParameterGenerator();
             param.AddStringParam("name", serverName);
