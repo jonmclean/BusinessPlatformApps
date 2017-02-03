@@ -124,8 +124,9 @@
       <HintPath>..\packages\Microsoft.Deployment.Actions.ADF.1.4.3-CI201611280641\lib\net452\Microsoft.Deployment.Actions.ADF.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Deployment.Actions.AzureCustom">
-      <HintPath>..\packages\Microsoft.Deployment.Actions.AzureCustom.1.4.3-CI201612200629\lib\net452\Microsoft.Deployment.Actions.AzureCustom.dll</HintPath>
+    <Reference Include="Microsoft.Deployment.Actions.AzureCustom, Version=1.0.6198.11690, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Actions\Microsoft.Deployment.Actions.AzureCustom\bin\Debug\Microsoft.Deployment.Actions.AzureCustom.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Deployment.Actions.Common">
       <HintPath>..\packages\Microsoft.Deployment.Actions.Common.1.4.3-CI201612200629\lib\net452\Microsoft.Deployment.Actions.Common.dll</HintPath>
@@ -423,9 +424,9 @@
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Target Name="OnCleanOnly" AfterTargets="Clean">
+  <!--<Target Name="OnCleanOnly" AfterTargets="Clean">
     <Exec Command="$(ProjectDir)\..\..\Shared\nuget.exe update $(ProjectDir)\packages.config -id Microsoft.Deployment.Actions.AzureCustom -noninteractive -prerelease&#xD;&#xA;$(ProjectDir)\..\..\Shared\nuget.exe update $(ProjectDir)\packages.config -id Microsoft.Deployment.Actions.Common -noninteractive -prerelease&#xD;&#xA;$(ProjectDir)\..\..\Shared\nuget.exe update $(ProjectDir)\packages.config -id Microsoft.Deployment.Actions.Custom -noninteractive -prerelease&#xD;&#xA;$(ProjectDir)\..\..\Shared\nuget.exe update $(ProjectDir)\packages.config -id Microsoft.Deployment.Actions.MsCrm -noninteractive -prerelease&#xD;&#xA;$(ProjectDir)\..\..\Shared\nuget.exe update $(ProjectDir)\packages.config -id Microsoft.Deployment.Actions.OnPremise -noninteractive -prerelease&#xD;&#xA;$(ProjectDir)\..\..\Shared\nuget.exe update $(ProjectDir)\packages.config -id Microsoft.Deployment.Actions.Salesforce -noninteractive -prerelease&#xD;&#xA;$(ProjectDir)\..\..\Shared\nuget.exe update $(ProjectDir)\packages.config -id Microsoft.Deployment.Actions.SQL -noninteractive -prerelease&#xD;&#xA;$(ProjectDir)\..\..\Shared\nuget.exe update $(ProjectDir)\packages.config -id Microsoft.Deployment.Common -noninteractive -prerelease" />
-  </Target>
+  </Target>-->
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
