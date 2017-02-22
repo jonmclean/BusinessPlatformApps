@@ -154,7 +154,7 @@ namespace Microsoft.Deployment.Actions.Test.TestHelpers
             Assert.IsTrue(subscriptionResult.IsSuccess);
             var subscriptionId =
                 subscriptionResult.Body.GetJObject()["value"].SingleOrDefault(
-                    p => p["DisplayName"].ToString().StartsWith("PBI_"));
+                    p => p["DisplayName"].ToString().StartsWith("PBI_") || p["DisplayName"].ToString().Contains("Essex"));
 
             dataStore.AddToDataStore("SelectedSubscription", subscriptionId, DataStoreType.Public);
 
