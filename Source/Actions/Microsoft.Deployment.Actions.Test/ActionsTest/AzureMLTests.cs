@@ -96,8 +96,8 @@ namespace Microsoft.Deployment.Actions.Test.ActionsTest
             await DeployAzureMlWorkspaceTest();
             var dataStore = await TestHarness.GetCommonDataStoreWithUserToken();
             dataStore.AddToDataStore("WorkspaceName", "test" + TestHarness.RandomCharacters);
-            dataStore.AddToDataStore("ExperimentJsonPath", "Service/AzureML/Experiments/Topics.json");
-            dataStore.AddToDataStore("ExperimentName", "TopicsDeployed");
+            dataStore.AddToDataStore("ExperimentJsonPath", "Service/AzureML/Experiments/Entity Recognition.json");
+            dataStore.AddToDataStore("ExperimentName", "EntitiesDeployed");
             dataStore.AddToDataStore("SqlConnectionString", TestHarness.GetSqlPagePayload("testruns"));
             var response = TestHarness.ExecuteAction("Microsoft-DeployAzureMLExperiment", dataStore);
             Assert.IsTrue(response.Status == ActionStatus.Success);
